@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Akintade Oluwasemilore — Communications & PR Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink:    #0E0E0E;
+  --paper:  #F8F7F4;
+  --white:  #FFFFFF;
+  --gold:   #B89A5A;
+  --gold-light: #D4B97A;
+  --mid:    #6A6460;
+  --rule:   #DDD9D3;
+  --dark-bg:#141410;
+  --dark-2: #1C1B17;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+  height: 64px;
+  background: rgba(248,247,244,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-mark span { color: var(--gold); }
+
+.nav-links { display: flex; gap: 2.8rem; list-style: none; }
+.nav-links a {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.25s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--ink);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--gold); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  padding-top: 64px;
+}
+
+.hero-main {
+  padding: 8vw 5vw 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--rule);
+}
+
+.hero-index {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.hero-index::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.2rem, 6.5vw, 6rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+}
+h1 strong { font-weight: 600; display: block; }
+h1 em { font-style: italic; font-weight: 300; color: var(--mid); }
+
+.hero-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin: 2rem 0;
+}
+
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--mid);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.hero-summary {
+  font-size: 0.88rem;
+  line-height: 1.95;
+  color: var(--mid);
+  max-width: 540px;
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.hero-actions { display: flex; gap: 1rem; }
+
+.btn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.85rem 2.2rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.btn-dark { background: var(--ink); color: var(--white); }
+.btn-dark:hover { background: var(--gold); }
+.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--rule); }
+.btn-ghost:hover { border-color: var(--ink); }
+
+/* HERO SIDEBAR */
+.hero-sidebar {
+  background: var(--dark-bg);
+  padding: 4rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.sb-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.stat-cell {
+  background: var(--dark-bg);
+  padding: 1.4rem 1.2rem;
+}
+.stat-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.stat-t {
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  font-weight: 500;
+}
+
+.comp-list { display: flex; flex-direction: column; gap: 0.65rem; }
+.comp-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.65);
+  font-weight: 300;
+}
+.comp-item::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.sb-contact { display: flex; flex-direction: column; gap: 0.5rem; }
+.sb-contact a, .sb-contact span {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  font-weight: 300;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.sb-contact a:hover { color: var(--gold-light); }
+
+/* SECTIONS */
+section { padding: 7rem 5vw; }
+
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+.sec-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.sec-line { flex: 1; height: 1px; background: var(--rule); align-self: center; }
+
+/* EXPERIENCE */
+#experience { background: var(--paper); }
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  border-top: 1px solid var(--rule);
+  padding: 3rem 0;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.exp-item.show { opacity: 1; transform: translateY(0); }
+
+.exp-meta { padding-right: 2rem; }
+.exp-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.exp-type {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.exp-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+.exp-org {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+.exp-pts { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.exp-pts li {
+  font-size: 0.86rem;
+  color: var(--mid);
+  line-height: 1.8;
+  padding-left: 1.4rem;
+  position: relative;
+  font-weight: 300;
+}
+.exp-pts li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(184,154,90,0.4);
+}
+
+/* SKILLS */
+#skills { background: var(--dark-bg); }
+#skills .sec-title { color: var(--white); }
+#skills .sec-num { color: var(--gold); }
+#skills .sec-line { background: rgba(255,255,255,0.08); }
+
+.skills-tbl { width: 100%; border-collapse: collapse; }
+.skills-tbl tr { border-top: 1px solid rgba(255,255,255,0.06); transition: background 0.18s; }
+.skills-tbl tr:hover { background: rgba(255,255,255,0.03); }
+.skills-tbl td {
+  padding: 1.6rem 1rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.58);
+  font-weight: 300;
+  vertical-align: middle;
+  line-height: 1.75;
+}
+.skills-tbl td:first-child {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--white);
+  width: 250px;
+  padding-right: 3rem;
+}
+.bar-wrap { display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem; }
+.bar { height: 1px; background: rgba(255,255,255,0.08); flex: 1; position: relative; overflow: hidden; }
+.bar-fill {
+  position: absolute; top: 0; left: 0; bottom: 0;
+  background: var(--gold);
+  width: 0;
+  transition: width 1.3s cubic-bezier(0.4,0,0.2,1);
+}
+.bar-pct { font-size: 0.62rem; color: var(--gold); font-weight: 600; letter-spacing: 0.06em; width: 30px; text-align: right; }
+
+/* EDUCATION */
+#education { background: var(--white); }
+
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--rule); }
+.edu-block {
+  padding: 3rem 3.5rem;
+  border-right: 1px solid var(--rule);
+  transition: background 0.2s;
+}
+.edu-block:last-child { border-right: none; }
+.edu-block:hover { background: var(--paper); }
+
+.edu-tag {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.edu-tag::before { content: ''; width: 22px; height: 1px; background: var(--gold); display: block; }
+.edu-deg {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+.edu-inst { font-size: 0.8rem; color: var(--mid); margin-bottom: 0.25rem; font-weight: 400; }
+.edu-yr { font-size: 0.72rem; color: var(--gold); font-weight: 500; letter-spacing: 0.08em; }
+
+.cert-wrap { margin-top: 4rem; }
+.cert-hd { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+.cert-hd-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--ink); white-space: nowrap; }
+.cert-hd-line { flex: 1; height: 1px; background: var(--rule); }
+
+.cert-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+  transition: padding-left 0.2s;
+}
+.cert-row:hover { padding-left: 0.8rem; }
+.cert-nm { font-size: 0.88rem; font-weight: 400; color: var(--ink); }
+.cert-is { font-size: 0.73rem; color: var(--mid); font-weight: 300; white-space: nowrap; }
+.cert-y { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; color: var(--gold); white-space: nowrap; }
+
+/* CONTACT */
+#contact { background: var(--dark-2); }
+#contact .sec-title { color: var(--white); }
+#contact .sec-num { color: var(--gold); }
+#contact .sec-line { background: rgba(255,255,255,0.08); }
+
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.contact-pull {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.55;
+  margin-bottom: 2.5rem;
+}
+.contact-pull strong { font-style: normal; font-weight: 600; color: var(--white); }
+
+.cf-list { display: flex; flex-direction: column; gap: 0; }
+.cf {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 1.2rem 0;
+}
+.cf-lbl { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+.cf-val { font-size: 0.92rem; color: rgba(255,255,255,0.75); font-weight: 300; }
+.cf-val a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.cf-val a:hover { color: var(--gold-light); }
+
+footer {
+  background: var(--ink);
+  padding: 1.8rem 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.f-name { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 500; color: rgba(255,255,255,0.35); letter-spacing: 0.06em; }
+.f-tag { font-size: 0.62rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.18); }
+
+/* ANIMATIONS */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-index   { animation: riseIn 0.8s ease 0.1s both; }
+h1            { animation: riseIn 0.8s ease 0.2s both; }
+.hero-divider { animation: riseIn 0.6s ease 0.35s both; }
+.hero-subtitle{ animation: riseIn 0.8s ease 0.4s both; }
+.hero-summary { animation: riseIn 0.8s ease 0.5s both; }
+.hero-actions { animation: riseIn 0.8s ease 0.6s both; }
+.hero-sidebar { animation: riseIn 0.9s ease 0.3s both; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-sidebar { flex-direction: row; flex-wrap: wrap; padding: 3rem 5vw; }
+  .hero-sidebar > * { flex: 1; min-width: 200px; }
+  .exp-item { grid-template-columns: 140px 1fr; }
+  .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .edu-grid { grid-template-columns: 1fr; }
+  .edu-block { border-right: none; border-bottom: 1px solid var(--rule); }
+}
+@media (max-width: 680px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .hero-main { padding: 5rem 1.5rem 3rem; }
+  .hero-sidebar { padding: 2.5rem 1.5rem; flex-direction: column; }
+  section { padding: 4rem 1.5rem; }
+  .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
+  .edu-block { padding: 2rem 1.5rem; }
+  .cert-row { grid-template-columns: 1fr auto; }
+  .cert-is { display: none; }
+  .skills-tbl td:first-child { width: auto; padding-right: 1rem; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-mark">A.<span>Semilore</span></a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:Lizbethmgmt@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-main">
+    <div class="hero-index">Communications &amp; PR Professional</div>
+    <h1>
+      <strong>Akintade</strong>
+      <em>Oluwasemilore Elizabeth</em>
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">Public Relations &nbsp;&middot;&nbsp; Customer Experience &nbsp;&middot;&nbsp; Digital Communications</p>
+    <p class="hero-summary">
+      A results-driven communications graduate with applied experience across the energy, hospitality, and digital sectors.
+      Demonstrates a consistent record of managing client relationships, coordinating administrative operations, and
+      supporting communications strategy. Holds a BSc in Public Relations &amp; Advertising from Caleb University,
+      complemented by three professional certifications.
+    </p>
+    <div class="hero-actions">
+      <a href="mailto:Lizbethmgmt@gmail.com" class="btn btn-dark">Get in Touch</a>
+      <a href="#experience" class="btn btn-ghost">View Experience</a>
+    </div>
+  </div>
+
+  <aside class="hero-sidebar">
+    <div>
+      <div class="sb-label">At a Glance</div>
+      <div class="stat-row">
+        <div class="stat-cell"><div class="stat-n">3+</div><div class="stat-t">Years Exp.</div></div>
+        <div class="stat-cell"><div class="stat-n">3</div><div class="stat-t">Certifications</div></div>
+        <div class="stat-cell"><div class="stat-n">BSc</div><div class="stat-t">PR &amp; Advertising</div></div>
+        <div class="stat-cell"><div class="stat-n">3</div><div class="stat-t">Industries</div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sb-label">Core Competencies</div>
+      <div class="comp-list">
+        <div class="comp-item">Public Relations &amp; Stakeholder Engagement</div>
+        <div class="comp-item">Customer Experience Management</div>
+        <div class="comp-item">Digital Marketing &amp; Content Strategy</div>
+        <div class="comp-item">Legal Administrative Support</div>
+        <div class="comp-item">Cross-functional Communication</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sb-label">Contact</div>
+      <div class="sb-contact">
+        <a href="mailto:Lizbethmgmt@gmail.com">Lizbethmgmt@gmail.com</a>
+        <span>+234 810 621 9882</span>
+        <span>Lagos, Nigeria</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-head">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title">Professional Experience</h2>
+    <div class="sec-line"></div>
+  </div>
+
+  <div>
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-year">2025 &mdash; Present</div>
+        <div class="exp-type">NYSC Deployment</div>
+      </div>
+      <div>
+        <div class="exp-role">Legal Department Administrator</div>
+        <div class="exp-org">Masters Energy Oil &amp; Gas Ltd &mdash; Lagos</div>
+        <ul class="exp-pts">
+          <li>Managed and safeguarded confidential employee records, ensuring accurate and timely submission of all staff documentation for compliance and audit purposes.</li>
+          <li>Organised and maintained a structured repository of legal documents including contracts, pleadings, and briefs across both physical and digital filing systems.</li>
+          <li>Served as the primary front-desk liaison for client inquiries, managing inbound correspondence and scheduling attorney consultations with discretion and professionalism.</li>
+          <li>Maintained and updated client databases, inputting case details and billing data into case management software with high accuracy.</li>
+          <li>Relayed non-legal communications to clients while strictly observing confidentiality protocols and the firm's professional conduct standards.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-year">2023</div>
+        <div class="exp-type">Full-Time</div>
+      </div>
+      <div>
+        <div class="exp-role">Customer Service &amp; Front Desk Officer</div>
+        <div class="exp-org">Marriott Hotel &mdash; Lagos</div>
+        <ul class="exp-pts">
+          <li>Delivered premium front-desk hospitality, consistently upholding Marriott's international service standards in a high-volume, fast-paced environment.</li>
+          <li>Coordinated communications between guests and the engineering team to manage service requests and device repair timelines with full transparency.</li>
+          <li>Collected, documented, and escalated guest feedback through surveys and direct conversations to inform ongoing service improvements.</li>
+          <li>Supported management with timely notifications of VIP arrivals, priority guest logistics, and front-desk inventory control.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-year">2022</div>
+        <div class="exp-type">Internship</div>
+      </div>
+      <div>
+        <div class="exp-role">Digital Marketing Intern</div>
+        <div class="exp-org">Masters Energy Oil &amp; Gas Ltd &mdash; Lagos</div>
+        <ul class="exp-pts">
+          <li>Contributed to content development and publishing across the company's social media channels, supporting audience growth and brand visibility.</li>
+          <li>Monitored online communities and forums for brand mentions, customer sentiment, and competitive activity, surfacing insights for the marketing team.</li>
+          <li>Researched advertising trends and audience targeting strategies to inform active digital campaigns and content planning.</li>
+          <li>Assisted in building and maintaining social media content calendars, ensuring consistency in brand voice and publishing cadence.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-head">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title">Skills &amp; Proficiencies</h2>
+    <div class="sec-line"></div>
+  </div>
+
+  <table class="skills-tbl">
+    <tbody>
+      <tr>
+        <td>Client Relations</td>
+        <td>
+          Managing high-value client relationships, handling sensitive communications, and ensuring satisfaction across corporate and hospitality environments.
+          <div class="bar-wrap"><div class="bar"><div class="bar-fill" data-w="90"></div></div><span class="bar-pct">90%</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Public Relations</td>
+        <td>
+          Brand reputation management, stakeholder messaging, media-facing communications, and strategic PR coordination.
+          <div class="bar-wrap"><div class="bar"><div class="bar-fill" data-w="85"></div></div><span class="bar-pct">85%</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Digital Marketing</td>
+        <td>
+          Content strategy, social media management, campaign planning, community monitoring, and audience targeting.
+          <div class="bar-wrap"><div class="bar"><div class="bar-fill" data-w="80"></div></div><span class="bar-pct">80%</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Administrative Ops</td>
+        <td>
+          Document management, scheduling, legal filing, database maintenance, and full office operations support.
+          <div class="bar-wrap"><div class="bar"><div class="bar-fill" data-w="88"></div></div><span class="bar-pct">88%</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Communication</td>
+        <td>
+          Compelling written and verbal communication in professional and executive contexts. Proficient in the Microsoft Office Suite.
+          <div class="bar-wrap"><div class="bar"><div class="bar-fill" data-w="92"></div></div><span class="bar-pct">92%</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Visual Design</td>
+        <td>
+          Proficient in Canva for marketing collateral, brand communications, presentations, and social media creatives.
+          <div class="bar-wrap"><div class="bar"><div class="bar-fill" data-w="75"></div></div><span class="bar-pct">75%</span></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="sec-head">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title">Education &amp; Credentials</h2>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="edu-grid">
+    <div class="edu-block">
+      <div class="edu-tag">University Degree</div>
+      <div class="edu-deg">BSc Public Relations &amp; Advertising</div>
+      <div class="edu-inst">Caleb University, Imota &nbsp;&middot;&nbsp; Mass Communication</div>
+      <div class="edu-yr">2020 &ndash; 2024</div>
+    </div>
+    <div class="edu-block">
+      <div class="edu-tag">Secondary Education</div>
+      <div class="edu-deg">West African Senior School Certificate</div>
+      <div class="edu-inst">West Africa Examinations Council (WAEC)</div>
+      <div class="edu-yr">2019</div>
+    </div>
+  </div>
+
+  <div class="cert-wrap">
+    <div class="cert-hd">
+      <span class="cert-hd-title">Professional Certifications</span>
+      <div class="cert-hd-line"></div>
+    </div>
+    <div>
+      <div class="cert-row">
+        <div class="cert-nm">Employability Skills Training &mdash; The Next Economy Programme</div>
+        <div class="cert-is">Poise Nigeria</div>
+        <div class="cert-y">2022</div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-nm">The Future of Africa's Creative Industries in the Era of Artificial Intelligence</div>
+        <div class="cert-is">The Innovention Series</div>
+        <div class="cert-y">2023</div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-nm">Digital Marketing &mdash; Professional Skill Acquisition Programme</div>
+        <div class="cert-is">Harvesters International</div>
+        <div class="cert-y">2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-head">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title">Let&rsquo;s Connect</h2>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="contact-layout">
+    <div>
+      <p class="contact-pull">
+        Open to <strong>full-time roles</strong> in communications, public relations,
+        customer experience, or marketing &mdash; based in <strong>Lagos</strong> or remote.
+      </p>
+      <a href="mailto:Lizbethmgmt@gmail.com" class="btn btn-dark">Send a Message</a>
+    </div>
+
+    <div class="cf-list">
+      <div class="cf">
+        <div class="cf-lbl">Email</div>
+        <div class="cf-val"><a href="mailto:Lizbethmgmt@gmail.com">Lizbethmgmt@gmail.com</a></div>
+      </div>
+      <div class="cf">
+        <div class="cf-lbl">Phone</div>
+        <div class="cf-val">+234 810 621 9882</div>
+      </div>
+      <div class="cf">
+        <div class="cf-lbl">Location</div>
+        <div class="cf-val">Lagos, Nigeria</div>
+      </div>
+      <div class="cf">
+        <div class="cf-lbl">Languages</div>
+        <div class="cf-val">English &mdash; Professional Proficiency</div>
+      </div>
+      <div class="cf">
+        <div class="cf-lbl">References</div>
+        <div class="cf-val">Available upon request</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="f-name">Akintade Oluwasemilore Elizabeth</span>
+  <span class="f-tag">PR &amp; Communications &nbsp;&middot;&nbsp; Lagos, Nigeria</span>
+</footer>
+
+<script>
+  const expItems = document.querySelectorAll('.exp-item');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('show'), i * 130);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  expItems.forEach(el => io.observe(el));
+
+  const bars = document.querySelectorAll('.bar-fill');
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.w + '%';
+        barObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  bars.forEach(b => barObs.observe(b));
+</script>
+</body>
+</html>
